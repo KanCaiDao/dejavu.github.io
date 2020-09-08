@@ -1,0 +1,31 @@
+[[main]]
+  identifier = "about"
+  name = "关于"
+  url = "about"
+  weight = 1
+
+[[main]]
+  identifier = "archive"
+  name = "归档"
+  url = "archive"
+  weight = 2
+
+
+
+[[main]]
+  identifier = "posts"
+  name = "文章"
+  url = "posts"
+  weight = 3
+    
+[[main]]
+  identifier = "notes"
+  name = "小技巧"
+  url = "notes"
+  weight = 4
+ 
+[[main]]
+  identifier = "movie"
+  name = "电影&书"
+  url = "movie"
+  weight = 5

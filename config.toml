@@ -1,0 +1,3 @@
+baseURL = "http://example.org/"
+title = "Dejavu的博客" # Title of your site
+theme = "zzo"
