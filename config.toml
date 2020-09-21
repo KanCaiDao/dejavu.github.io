@@ -1,3 +1,3 @@
-baseURL = "http://example.org/"
+baseURL = "https://sqlmap.wiki/"
 title = "Dejavu的博客" # Title of your site
 theme = "zzo"
