@@ -1,4 +1,4 @@
-baseURL = "http://example.org/" # The URL of your site.
+baseURL = "https://sqlmap.wiki/" # The URL of your site.
 title = "Dejavu" # Title of your site
 theme = "zzo" # Name of Zzo theme folder in `themes/`.
 
