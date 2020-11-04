@@ -22,9 +22,11 @@ mysqldump -hdbhost -uroot -pdbpasswd -d dbname >db.sql;
 使用html编码后再搜索  https://seo.juziseo.com/tools/entity/
 
 <h5>禅道获取版本号</h5>
+
 index.php?mode=getconfig
 
 <h5>获取oss key</h5>
+
 apk逆向得到class文件，全局搜索OSS_access
 
 <h5>获取进程中文件的具体位置</h5>
