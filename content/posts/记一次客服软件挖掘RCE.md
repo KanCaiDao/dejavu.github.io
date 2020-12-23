@@ -51,9 +51,9 @@ electron常见的漏洞有2个，一个是**自定义协议**造成的命令注�
 
 与客服建立通话，发送payload如下
 
-![QQ截图20201104151601.png](https://cdn.nlark.com/yuque/0/2020/png/1498652/1604476606284-413fb9e7-d816-4774-a81f-812cf14da7f9.png#align=left&display=inline&height=242&margin=%5Bobject%20Object%5D&name=QQ%E6%88%AA%E5%9B%BE20201104151601.png&originHeight=242&originWidth=1648&size=13626&status=done&style=none&width=1648)
+![QQ截图20201104151601.png](https://sqlmap.wiki/images/68747470733a2f2f63646e2e6e6c61726b2e636f6d2f79757175652f302f323032302f706e672f313439383635322f313630343437363630363238342d34313366623965372d643831362d343737342d613831662d3831326366313464613766392e706e6723616c69676.png)
 效果
-![QQ截图20201104152237.png](https://cdn.nlark.com/yuque/0/2020/png/1498652/1604476621811-2494cf8b-07d3-4512-8aee-5cc82b34f1e1.png#align=left&display=inline&height=390&margin=%5Bobject%20Object%5D&name=QQ%E6%88%AA%E5%9B%BE20201104152237.png&originHeight=390&originWidth=797&size=43366&status=done&style=none&width=797)
+![QQ截图20201104152237.png](https://sqlmap.wiki/images/QQ截图20201104152237.png)
 
 
 
