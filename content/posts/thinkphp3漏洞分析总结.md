@@ -16,7 +16,9 @@ categories: ['代码审计']
 在说thinkphp3框架漏洞的时候，我们得首先区分一个概念，就是框架本身漏洞，和程序员写法问题而造成的漏洞。这两个是要区别开来的。框架本身的漏洞，我们只要碰到这种框架，就一定能利用成功，而程序员写代码是各不一样的。
 
 
+
 ## 程序员写法而造成的漏洞
+
 
 ### where函数使用字符串拼接导致的注入
 
@@ -29,6 +31,7 @@ select * from user where a=xxx;
 
 
 #### 示例代码
+
 
 
 ```php
@@ -86,7 +89,7 @@ thinkphp中的m方法主要功能就是实例化，没啥看的，直接f8跳过
 ![image.png](https://sqlmap.wiki/images/image%20(16).png)
 
 
-## 以数组传参不会导致注入
+#### 以数组传参不会导致注入
 
 
 官方手册上，是推荐以数组传参的，这样是不会导致注入的。
@@ -177,9 +180,7 @@ id from user where 1=updatexml(1,concat(0x7e,user()),1)#
 ### 参数传递注入
 
 
-
 前面我们说过，不管是直接使用原生的get或posr，还是i函数，都可能因为写法或者thinkphp本身的漏洞而造成注入，而参数传递也是我们要关注的。
-
 
 
 
@@ -196,10 +197,12 @@ public function csct($name)
 ```
 
 
-![image.png](https://sqlmap.wiki/images/image%20(19).png
+![image.png](https://sqlmap.wiki/images/image%20(19)).png
 
 
 没啥好说的,因为这种传参本身就是走的原始请求
+
+
 
 ### exp表达式注入
 
