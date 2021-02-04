@@ -171,7 +171,7 @@ class IndexController extends Controller {
 
 ```php
 id from user where 1=updatexml(1,concat(0x7e,user()),1)#
-
+```
 
 #### 总结
 不止filed()，order,having,comment,group可控，就可注入
