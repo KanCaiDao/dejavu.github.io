@@ -197,7 +197,7 @@ public function csct($name)
 ```
 
 
-![image.png](https://sqlmap.wiki/images/image%20(19)).png
+![image.png](https://sqlmap.wiki/images/image%20(19).png)
 
 
 没啥好说的,因为这种传参本身就是走的原始请求
