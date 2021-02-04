@@ -54,12 +54,12 @@ class IndexController extends Controller {
 我们传入一个1x识程序报错，然后用phpstorm下断点进行调试。在第7行打入断点。f7进入
 
 
-![image.png](https://sqlmap.wiki/images/image%2010.png)
+![image.png](https://sqlmap.wiki/images/image%20(10).png)
 
 
 thinkphp中的m方法主要功能就是实例化，没啥看的，直接f8跳过。
 进入到where函数
-![image.png](https://sqlmap.wiki/images/image%2011.png)
+![image.png](https://sqlmap.wiki/images/image%20(11).png)
 
 
 
@@ -67,23 +67,23 @@ thinkphp中的m方法主要功能就是实例化，没啥看的，直接f8跳过
 进入到select函数
 
 
-![image.png](https://sqlmap.wiki/images/image%2012.png)
+![image.png](https://sqlmap.wiki/images/image%20(12).png)
 
 
-![image.png](https://sqlmap.wiki/images/image%2013.png)
+![image.png](https://sqlmap.wiki/images/image%20(13).png)
 
 
-![image.png](https://sqlmap.wiki/images/image%2014.png)
+![image.png](https://sqlmap.wiki/images/image%20(14).png)
 
 
-![image.png](https://sqlmap.wiki/images/image%2015.png)
+![image.png](https://sqlmap.wiki/images/image%20(15).png)
 
 
 可以看到，where函数使用字符串进行拼接的时候，底层是直接拼接的，没有使用任何过滤，所以我们只需要构造payload
 ```sql
 1) and updatexml(1,concat(0x7e,user(),1),1)--+
 ```
-![image.png](https://sqlmap.wiki/images/image%2016.png)
+![image.png](https://sqlmap.wiki/images/image%20(16).png)
 
 
 ## 以数组传参不会导致注入
@@ -117,10 +117,10 @@ class IndexController extends Controller {
 
 
 还是在user那打下断点，进入到_parseOptions，关键点。
-![image.png](https://sqlmap.wiki/images/image%2017.png)
+![image.png](https://sqlmap.wiki/images/image%20(17).png)
 
 
-![image.png](https://sqlmap.wiki/images/image%2018.png)
+![image.png](https://sqlmap.wiki/images/image%20(18).png)
 
 
 
@@ -196,7 +196,7 @@ public function csct($name)
 ```
 
 
-![image.png](https://sqlmap.wiki/images/image%2019.png
+![image.png](https://sqlmap.wiki/images/image%20(19).png
 
 
 没啥好说的,因为这种传参本身就是走的原始请求
@@ -206,8 +206,8 @@ public function csct($name)
 #### 表达式
 
 
-![image.png](https://sqlmap.wiki/images/image%2020.png)
-![image.png](https://sqlmap.wiki/images/image%2021.png)
+![image.png](https://sqlmap.wiki/images/image%20(20).png)
+![image.png](https://sqlmap.wiki/images/image%20(21).png)
 
 
 
@@ -236,7 +236,7 @@ class IndexController extends Controller {
 #### 漏洞触发点
 
 
-![image.png](https://sqlmap.wiki/images/image%2022.png)
+![image.png](https://sqlmap.wiki/images/image%20(22).png)
 
 
 ThinkPHP/Library/Think/Db/Driver.class.php 第569到第470行，如果传的值等于exp，就会把where条件直接进行拼接。造成注入
@@ -247,7 +247,7 @@ ThinkPHP/Library/Think/Db/Driver.class.php 第569到第470行，如果传的值�
 
 
 
-![image.png](https://sqlmap.wiki/images/image%2023.png)
+![image.png](https://sqlmap.wiki/images/image%20(23).png)
 
 
 
@@ -262,7 +262,7 @@ id[0]=exp&exp[1]==updatexml(1,concat(0x7e,user(),0x7e),1)
 
 
 
-![image.png](https://sqlmap.wiki/images/image%2024.png)
+![image.png](https://sqlmap.wiki/images/image%20(24).png)
 
 
 
@@ -296,7 +296,7 @@ class IndexController extends Controller {
 在name处打入断点进行分析，可以发现：
 I函数默认通过htmlspecialchars()进行过滤，而且会通过ThinkPHP/Common/functions.php的think_filter()进行关键字过滤，因为think_filter过滤了exp关键字，所以我们这里不能通过exp进行注入了
 
-![image.png](https://sqlmap.wiki/images/image%2025.png)
+![image.png](https://sqlmap.wiki/images/image%20(25).png)
 
 
 
@@ -328,10 +328,10 @@ public function  ff()
 第一个参数是要写入的缓存文件名，第二个是要写入的内容。写入之后，会保存在/Application/Data/目录下
 
 
-![image.png](https://sqlmap.wiki/images/image%2026.png)
+![image.png](https://sqlmap.wiki/images/image%20(26).png)
 
 
-![image.png](https://sqlmap.wiki/images/image%2027.png)
+![image.png](https://sqlmap.wiki/images/image%20(27).png)
 
 
 
@@ -415,7 +415,7 @@ s方法生成的文件名是通过md5加密的。所以实际渗透中记得加�
 浏览器输入参数1x，phpstrom在$a开启调试。
 经过seelct方法，会直接进入   _parseOptions()。在前面where参数可控的文章中说过，如果变量为字符串，会直接进行拼接，只有为数组才会进入到_parseOptions方法中。而这里会直接进入到 _parseOptions()。进入到_parseOptions之后，会进入到_parseType()，进行强转
 
-![image.png](https://sqlmap.wiki/images/image%2028.png)
+![image.png](https://sqlmap.wiki/images/image%20(28).png)
 
 
 这样，自然就不会存在注入了。
@@ -425,7 +425,7 @@ s方法生成的文件名是通过md5加密的。所以实际渗透中记得加�
 
 
 ThinkPHP/Library/Think/Model.class.php 648
-![image.png](https://sqlmap.wiki/images/image%2029.png)
+![image.png](https://sqlmap.wiki/images/image%20(29).png)
 
 
 第二个条件中，where中的值为数组。我们可以直接传入payload
@@ -435,7 +435,7 @@ ThinkPHP/Library/Think/Model.class.php 648
 id[where]=1 and updatexml(1,concat(0x7e,user(),0x7e),1)#
 ```
 这样值的类型为字符串，进行了绕过
-![image.png](https://sqlmap.wiki/images/image%2030.png)
+![image.png](https://sqlmap.wiki/images/image%20(30).png)
 #### 总结
 
 
@@ -484,7 +484,7 @@ elseif('bind' == $exp ){ // 使用表达式
 
 
 可以看到，虽然是通过直接拼接的。但是在关键字key后面是加了一个冒号的，如果还按照exp那篇文章的payload打，会出现这个问题
-![image.png](https://sqlmap.wiki/images/image%2031.png)
+![image.png](https://sqlmap.wiki/images/image%20(31).png)
 
 值前面有个冒号，而pass那个值直接为空，并没有出现冒号，这是为什么呢。我们继续往下调试。
 
