@@ -6,9 +6,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - 四季总是有一次凋零
+      - Talk is cheap
     subtitle:
-      - 结果无数次凋零
+      - Show me the code
     titleColor:
     titleShadow: true
     titleFontSize: 44
